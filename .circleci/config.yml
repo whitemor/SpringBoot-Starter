@@ -37,7 +37,7 @@ jobs:
 
       - run: 
           name: echo 
-          command: find . -name "."
+          command: find . -name "*.*";pwd
 
       - run: 
           name: Deploy to s3
