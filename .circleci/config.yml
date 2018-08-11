@@ -31,13 +31,14 @@ jobs:
 #          name: mvn-test
 #          command: mvn test
 
-      - run:
-          name: Install awscli
-          command: sudo pip install awscli
-      - run:
-          name: Deploy to S3
-          command: aws s3 sync jekyll/_site/docs s3://circle-production-static-site/docs/ --delete
+      - dependencies:
+          override: 
+              - sudo pip install awscli
 
+      - deployment:
+	  prod:
+	      branch: master
+	      command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
 #    workflows:
 #      version: 2
 #      build-deploy:
