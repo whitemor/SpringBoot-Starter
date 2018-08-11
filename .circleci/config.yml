@@ -37,7 +37,7 @@ jobs:
 
       - run: 
           name: echo 
-          command: find . -name "*.*";pwd/mkdir target/sam;cp target/demo-0.0.1-SNAPSHOT.jar target/sam/.;cd target
+          command: find . -name "*.*";pwd;mkdir target/sam;cp target/demo-0.0.1-SNAPSHOT.jar target/sam/.;cd target
 
       - run: 
           name: Deploy to s3
