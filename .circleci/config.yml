@@ -43,6 +43,17 @@ jobs:
           name: Deploy to s3
           command: aws s3 sync target s3://s3circleci/ --delete
 
+  build:
+    docker:
+       - image: account-id.dkr.ecr.us-east-1.amazonaws.com/org/repo:0.1
+          aws_auth:
+	    aws_access_key_id: $AWS_ACCESS_KEY_ID_STAGING
+	    aws_secret_access_key: $AWS_SECRET_ACCESS_KEY_STAGING
+    steps:
+      - run:
+         name: "Full Test Suite"
+	 command: "testing...."
+       
 ###
 #      - run: mvn dependency:go-offline
 #      
