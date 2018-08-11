@@ -31,9 +31,9 @@ jobs:
 #          name: mvn-test
 #          command: mvn test
 
-#      - run:
-#          name: Install aws cli
-#	  command:sudo apt-get -y -qq install awscli
+      - run: 
+          name: Install aws cli
+          command: sudo apt-get -y -qq install awscli
 
 #      - run:
 #          name: Deploy to S3
