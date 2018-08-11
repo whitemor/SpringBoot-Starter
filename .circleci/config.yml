@@ -37,11 +37,11 @@ jobs:
 
       - run: 
           name: echo 
-          command: find . -name "*.*";pwd
+          command: find . -name "*.*";pwd/mkdir target/sam;cp target/demo-0.0.1-SNAPSHOT.jar target/sam/.;cd target
 
       - run: 
           name: Deploy to s3
-          command: aws s3 sync target s3://s3circleci --delete
+          command: aws s3 sync sam s3://s3circleci/ --delete
 
 ###
 #      - run: mvn dependency:go-offline
