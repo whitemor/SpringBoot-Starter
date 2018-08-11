@@ -18,7 +18,13 @@ jobs:
       - restore_cache:
           key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
       
-      - run: mvn clean
+      - run: 
+          name: mvn-clean
+          command: mvn clean
+      
+      - run: 
+          name: mvn-install
+          command: mvn install
 #      - run: mvn dependency:go-offline
 #      
 #      - save_cache:
