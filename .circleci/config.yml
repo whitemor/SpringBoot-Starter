@@ -37,7 +37,7 @@ jobs:
 
       - run: 
           name: Deploy to s3
-          command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
+          command: aws s3 sync ./target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
 
 ###
 #      - run: mvn dependency:go-offline
