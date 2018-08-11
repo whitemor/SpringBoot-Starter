@@ -25,6 +25,11 @@ jobs:
       - run: 
           name: mvn-install
           command: mvn install
+      
+      - run: 
+          name: mvn-test
+          command: mvn test
+
 #      - run: mvn dependency:go-offline
 #      
 #      - save_cache:
