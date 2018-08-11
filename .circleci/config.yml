@@ -19,26 +19,26 @@ jobs:
 #      - restore_cache:
 #          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
       
-#      - run: 
-#          name: mvn-clean
-#          command: mvn clean
+      - run: 
+          name: mvn-clean
+          command: mvn clean
       
-#      - run: 
-#          name: mvn-install
-#          command: mvn install
+      - run: 
+          name: mvn-install
+          command: mvn install
       
 #      - run: 
 #          name: mvn-test
 #          command: mvn test
 
-      - dependencies:
-          override: 
-              - sudo pip install awscli
+      - run:
+          name: Install aws cli
+	  command: 
+	      sudo apt-get -y -qq install awscli
 
-      - deployment:
-	  prod:
-	      branch: master
-	      command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
+      - run:
+          name: Deploy to S3
+	  command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
 #    workflows:
 #      version: 2
 #      build-deploy:
