@@ -12,7 +12,6 @@ jobs:
           POSTGRES_USER: root
           POSTGRES_DB: circle_test
 
-    working_directory: ~/circleci-docs
     steps:
 
 #      - checkout
@@ -39,17 +38,17 @@ jobs:
           name: Deploy to S3
           command: aws s3 sync jekyll/_site/docs s3://circle-production-static-site/docs/ --delete
 
-    workflows:
-      version: 2
-      build-deploy:
-        jobs:
-          - build
-          - deploy:
-              requires:
-                - build
-              filters:
-                branches:
-                  only: master
+#    workflows:
+#      version: 2
+#      build-deploy:
+#        jobs:
+#          - build
+#          - deploy:
+#              requires:
+#                - build
+#              filters:
+#                branches:
+#                  only: master
 ###
 #      - run: mvn dependency:go-offline
 #      
