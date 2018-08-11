@@ -33,12 +33,11 @@ jobs:
 
       - run:
           name: Install aws cli
-	  command: 
-	      sudo apt-get -y -qq install awscli
+	  command:sudo apt-get -y -qq install awscli
 
-      - run:
-          name: Deploy to S3
-	  command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
+#      - run:
+#          name: Deploy to S3
+#	  command: aws s3 sync /home/circleci/circleci-demo-java-spring/target/demo-0.0.1-SNAPSHOT.jar s3://s3circleci --delete
 
 #    workflows:
 #      version: 2
