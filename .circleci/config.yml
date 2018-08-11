@@ -41,7 +41,8 @@ jobs:
 
       - run: 
           name: Deploy to s3
-          command: aws s3 sync target s3://s3circleci/ --delete
+          command: ./deploy.sh
+#          command: aws s3 sync target s3://s3circleci/ --delete
 
 #  build:
 #    docker:
