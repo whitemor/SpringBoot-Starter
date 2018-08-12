@@ -27,9 +27,9 @@ jobs:
           name: mvn-install
           command: mvn install
       
-      - run: 
-          name: mvn-test
-          command: mvn test
+#      - run: 
+#          name: mvn-test
+#          command: mvn test
 
       - run: 
           name: Install aws cli
