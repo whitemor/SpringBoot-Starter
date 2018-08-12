@@ -32,6 +32,6 @@ CMD ["/sbin/my_init"]
 
 RUN mkdir /app
 
-ADD target/sam/demo-0.0.1-SNAPSHOT.jar /app
+ADD target/demo-0.0.1-SNAPSHOT.jar /app
 
 
