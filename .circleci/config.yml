@@ -21,15 +21,15 @@ jobs:
       
       - run: 
           name: mvn-clean
-          command: echo clean
+          command: mvn clean
       
       - run: 
           name: mvn-install
-          command: echo install
+          command: mvn install
       
       - run: 
           name: mvn-test
-          command: echo test
+          command: mvn test
 
       - run: 
           name: Install Command Line
